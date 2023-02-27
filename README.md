@@ -3,7 +3,7 @@
 [![npm version](https://img.shields.io/npm/v/react-window.svg?style=flat-square)](https://www.npmjs.com/package/react-window)
 [![npm downloads](https://img.shields.io/npm/dm/react-window.svg?style=flat-square)](https://www.npmjs.com/package/react-window)
 
-ReactWindow is a component that simplifies the management of window event listeners. 
+ReactWindow is a component that simplifies the management of window event listeners.
 
 Instead of adding (and removing) listeners manually in `useEffect`, this component allows you to attach them in React way:
 
@@ -64,10 +64,10 @@ function Example() {
     <div>
       <button
         onClick={() => {
-          setListenForScroll(!listenForScroll)
+          setListenForScroll(!listenForScroll);
         }}
       >
-        {listenForScroll ? 'Disable' : 'Enable'} scroll listener
+        {listenForScroll ? "Disable" : "Enable"} scroll listener
       </button>
       {listenForScroll && (
         <ReactWindow
@@ -79,136 +79,101 @@ function Example() {
     </div>
   );
 }
-
 ```
 
 ## Supported events
 
-| Misc            |
-| --------------- |
-| onLoad          |
-| onLoadCapture   |
-| onSelect        |
-| onSelectCapture |
-| onError         |
-| onErrorCapture  |
+### Misc
 
-| Scroll / Wheel  |
-| --------------- |
-| onScroll        |
-| onScrollCapture |
-| onScrollPassive |
-| onWheel         |
-| onWheelCapture  |
-| onWheelPassive  |
+| Event    | Capture variant |
+| -------- | --------------- |
+| onLoad   | onLoadCapture   |
+| onSelect | onSelectCapture |
+| onError  | onErrorCapture  |
 
-| Focus / Blur   |
-| -------------- |
-| onFocus        |
-| onFocusCapture |
-| onBlur         |
-| onBlurCapture  |
+### Scroll / Wheel
 
-| Keyboard         |
-| ---------------- |
-| onKeyDown        |
-| onKeyDownCapture |
-| onKeyUp          |
-| onKeyUpCapture   |
+| Event    | Capture variant | Passive variant |
+| -------- | --------------- | --------------- |
+| onScroll | onScrollCapture | onScrollPassive |
+| onWheel  | onWheelCapture  | onWheelPassive  |
 
-| Mouse                |
-| -------------------- |
-| onAuxClick           |
-| onAuxClickCapture    |
-| onClick              |
-| onClickCapture       |
-| onDblClick           |
-| onDblClickCapture    |
-| onContextMenu        |
-| onContextMenuCapture |
-| onDrag               |
-| onDragCapture        |
-| onDragEnd            |
-| onDragEndCapture     |
-| onDragEnter          |
-| onDragEnterCapture   |
-| onDragExit           |
-| onDragExitCapture    |
-| onDragLeave          |
-| onDragLeaveCapture   |
-| onDragOver           |
-| onDragOverCapture    |
-| onDragStart          |
-| onDragStartCapture   |
-| onDrop               |
-| onDropCapture        |
-| onMouseDown          |
-| onMouseDownCapture   |
-| onMouseMove          |
-| onMouseMoveCapture   |
-| onMouseOut           |
-| onMouseOutCapture    |
-| onMouseOver          |
-| onMouseOverCapture   |
-| onMouseUp            |
-| onMouseUpCapture     |
-| onMouseEnter         |
-| onMouseLeave         |
+### Focus / Blur
 
-| Touch                |
-| -------------------- |
-| onTouchCancel        |
-| onTouchCancelCapture |
-| onTouchEnd           |
-| onTouchEndCapture    |
-| onTouchMove          |
-| onTouchMoveCapture   |
-| onTouchMovePassive   |
-| onTouchStart         |
-| onTouchStartCapture  |
-| onTouchStartPassive  |
+| Event   | Capture variant |
+| ------- | --------------- |
+| onFocus | onFocusCapture  |
+| onBlur  | onBlurCapture   |
 
-| Pointer                     |
-| --------------------------- |
-| onPointerDown               |
-| onPointerDownCapture        |
-| onPointerMove               |
-| onPointerMoveCapture        |
-| onPointerUp                 |
-| onPointerUpCapture          |
-| onPointerCancel             |
-| onPointerCancelCapture      |
-| onPointerEnter              |
-| onPointerEnterCapture       |
-| onPointerLeave              |
-| onPointerLeaveCapture       |
-| onPointerOver               |
-| onPointerOverCapture        |
-| onPointerOut                |
-| onPointerOutCapture         |
-| onGotPointerCapture         |
-| onGotPointerCaptureCapture  |
-| onLostPointerCapture        |
-| onLostPointerCaptureCapture |
+### Keyboard
 
-| Animation                   |
-| --------------------------- |
-| onAnimationStart            |
-| onAnimationStartCapture     |
-| onAnimationEnd              |
-| onAnimationEndCapture       |
-| onAnimationIteration        |
-| onAnimationIterationCapture |
-| onAnimationCancel           |
-| onAnimationCancelCapture    |
+| Event     | Capture variant  |
+| --------- | ---------------- |
+| onKeyDown | onKeyDownCapture |
+| onKeyUp   | onKeyUpCapture   |
 
-| Transition                |
-| ------------------------- |
-| onTransitionStart         |
-| onTransitionStartCapture  |
-| onTransitionEnd           |
-| onTransitionEndCapture    |
-| onTransitionRun           |
-| onTransitionRunCapture    |
-| onTransitionCancel        |
-| onTransitionCancelCapture |
+### Mouse
+
+| Event         | Capture variant      |
+| ------------- | -------------------- |
+| onAuxClick    | onAuxClickCapture    |
+| onClick       | onClickCapture       |
+| onDblClick    | onDblClickCapture    |
+| onContextMenu | onContextMenuCapture |
+| onDrag        | onDragCapture        |
+| onDragEnd     | onDragEndCapture     |
+| onDragEnter   | onDragEnterCapture   |
+| onDragExit    | onDragExitCapture    |
+| onDragLeave   | onDragLeaveCapture   |
+| onDragOver    | onDragOverCapture    |
+| onDragStart   | onDragStartCapture   |
+| onDrop        | onDropCapture        |
+| onMouseDown   | onMouseDownCapture   |
+| onMouseMove   | onMouseMoveCapture   |
+| onMouseOut    | onMouseOutCapture    |
+| onMouseOver   | onMouseOverCapture   |
+| onMouseUp     | onMouseUpCapture     |
+| onMouseEnter  |                      |
+| onMouseLeave  |                      |
+
+### Touch
+
+| Event         | Capture variant      | Passive variant     |
+| ------------- | -------------------- | ------------------- |
+| onTouchCancel | onTouchCancelCapture |                     |
+| onTouchEnd    | onTouchEndCapture    |                     |
+| onTouchMove   | onTouchMoveCapture   | onTouchMovePassive  |
+| onTouchStart  | onTouchStartCapture  | onTouchStartPassive |
+
+### Pointer
+
+| Event                | Capture variant             |
+| -------------------- | --------------------------- |
+| onPointerDown        | onPointerDownCapture        |
+| onPointerMove        | onPointerMoveCapture        |
+| onPointerUp          | onPointerUpCapture          |
+| onPointerCancel      | onPointerCancelCapture      |
+| onPointerEnter       | onPointerEnterCapture       |
+| onPointerLeave       | onPointerLeaveCapture       |
+| onPointerOver        | onPointerOverCapture        |
+| onPointerOut         | onPointerOutCapture         |
+| onGotPointerCapture  | onGotPointerCaptureCapture  |
+| onLostPointerCapture | onLostPointerCaptureCapture |
+
+### Animation
+
+| Event                | Capture variant             |
+| -------------------- | --------------------------- |
+| onAnimationStart     | onAnimationStartCapture     |
+| onAnimationEnd       | onAnimationEndCapture       |
+| onAnimationIteration | onAnimationIterationCapture |
+| onAnimationCancel    | onAnimationCancelCapture    |
+
+### Transition
+
+| Event              | Capture variant           |
+| ------------------ | ------------------------- |
+| onTransitionStart  | onTransitionStartCapture  |
+| onTransitionEnd    | onTransitionEndCapture    |
+| onTransitionRun    | onTransitionRunCapture    |
+| onTransitionCancel | onTransitionCancelCapture |
