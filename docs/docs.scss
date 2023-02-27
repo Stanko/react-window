@@ -15,6 +15,8 @@
   --main: #8546e3;
 }
 
+$font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+  "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 $font-family-mono: ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
 @mixin md {
@@ -55,8 +57,7 @@ body {
   background: var(--bg-color);
   font-size: 1.8rem;
   line-height: 1.4;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
-    "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: $font-family;
   padding-bottom: 30vh;
   padding-bottom: 30svh;
   min-height: 130vh;
@@ -218,7 +219,7 @@ pre {
 }
 
 .toggle--enabled {
-  outline: 1px solid var(--main);
+  border-color: var(--main);
 }
 
 .toggles-note {
@@ -235,7 +236,6 @@ pre {
 // -------- LOG -------- //
 
 .log {
-  font-family: $font-family-mono;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -244,7 +244,9 @@ pre {
   height: 24svh;
   overflow-y: auto;
   border-top: 1px solid var(--gray);
-  background-color: var(--white);
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.8);
+
   font-size: 1.3rem;
 
   @include md {
@@ -255,10 +257,12 @@ pre {
 }
 
 .log-title {
+  font-family: $font-family;
   font-weight: bold;
 }
 
 .log-content {
+  font-family: $font-family-mono;
   padding: 2rem;
   max-width: 60rem;
   margin: 0 auto;
