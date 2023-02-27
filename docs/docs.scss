@@ -236,6 +236,8 @@ pre {
 // -------- LOG -------- //
 
 .log {
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
   position: fixed;
   bottom: 0;
   left: 0;
@@ -244,7 +246,6 @@ pre {
   height: 24svh;
   overflow-y: auto;
   border-top: 1px solid var(--gray);
-  backdrop-filter: blur(5px);
   background-color: rgba(255, 255, 255, 0.8);
 
   font-size: 1.3rem;
