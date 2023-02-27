@@ -22,8 +22,6 @@ Instead of manually adding (and removing) listeners using `useEffect`, ReactWind
 
 The component is inspired by [&lt;svelte:window&gt;](https://svelte.dev/docs#template-syntax-svelte-window) and is available with the following features:
 
-### Features
-
 - Simplifies management of window event listeners.
 - Attaches a single event per listener type (if you have multiple instances of ReactWindow with onClick in your app, only a single click event will be attached).
 - Supports conditional rendering.
@@ -81,7 +79,7 @@ function Example() {
 
       {listenForScroll && (
         <ReactWindow
-          onScroll={() => {
+          onScrollPassive={() => {
             console.log(`Wheeeeee! ${window.scrollY}px`);
           }}
         />
@@ -91,19 +89,19 @@ function Example() {
 }
 ```
 
-### Listener options
+## Listener options
 
 React Window supports `capture` and `options` listener options. These options can be set using the `[onEventName]Capture` and `[onEventName]Passive` variations. 
 
 For example, to set `capture` option for `onClick`, you would use `onClickCapture`.
 
-And to set `passive` option for `onScroll`, you would use `onScrollCapture`.
+And to set `passive` option for `onScroll`, you would use `onScrollPassive`.
 
-### Gotchas
+## Gotchas
 
 There are a couple of gotchas to keep in mind when working with React Window:
 
-#### Events are only added on mount
+### Events are only added on mount
 
 Events are only added on mount and removed on unmount. This means that if you change your handler dynamically, nothing will happen. 
 
@@ -123,7 +121,7 @@ In other words, avoid the following pattern:
 
 This behavior is intentional, as it improves performance and eliminates the need for unnecessary rerenders.
 
-#### Double click
+### Double click
 
 React Window uses `onDblClick` to match the native event name, which differs from the built-in React version that uses `onDoubleClick`.
 
