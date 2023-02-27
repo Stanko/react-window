@@ -23,8 +23,8 @@ Instead of manually adding (and removing) listeners using `useEffect`, ReactWind
 
 The library is inspired by [svelte](https://svelte.dev/docs#template-syntax-svelte-window) and is available with the following features:
 
-- Simplify management of window (and body) event listeners.
-- Attaches a single event per listener type (if you have multiple instances of ReactWindow with onClick in your app, only a single click event will be attached).
+- Simplifies management of window (and body) event listeners.
+- Attaches a single event per listener type (if you have multiple instances of `ReactWindow` with `onClick` in your app, only a single `click` event will be attached).
 - Supports conditional rendering.
 - Supports `capture` and `passive` [listener options](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#options).
 - Tiny - around 0.5 kB minified and gzipped.
