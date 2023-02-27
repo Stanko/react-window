@@ -1,6 +1,6 @@
 {
   "name": "@stanko/react-window",
-  "version": "0.9.2",
+  "version": "0.9.3",
   "private": false,
   "license": "MIT",
   "description": "React components that simplify the management of window and body event listeners.",

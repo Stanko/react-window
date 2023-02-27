@@ -1,7 +1,7 @@
 const React = require("react");
 const ReactDOMServer = require("react-dom/server");
 const ReactWindow = require("./dist/cjs").default;
-const ReactBody = require("./dist/cjs/body").default;
+const { ReactBody } = require("./dist/cjs");
 
 const example = React.createElement("div", null, [
   React.createElement(ReactWindow, { key: "1", onClick: () => console.log("Hello Window!") }),

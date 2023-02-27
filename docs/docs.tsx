@@ -1,6 +1,6 @@
 import React, { StrictMode, useState, useEffect } from "react";
 import { createRoot } from "react-dom/client";
-import ReactWindow, { __event_store } from "../src/body";
+import ReactWindow, { __window_event_store } from "../src/index";
 
 const log = console.log;
 
@@ -32,13 +32,13 @@ console.log = (...a) => {
 };
 
 const EventsStore = () => {
-  const [store, setStore] = useState(__event_store);
+  const [store, setStore] = useState(__window_event_store);
 
   updateStore = () => {
-    setStore({ ...__event_store });
+    setStore({ ...__window_event_store });
   };
 
-  if (Object.keys(__event_store).length === 0) {
+  if (Object.keys(__window_event_store).length === 0) {
     return null;
   }
 

@@ -64,7 +64,7 @@ function Example() {
 `ReactBody` works same as `ReactWindow` but attaches listeners to `document.body` instead of `window`.
 
 ```js
-import ReactBody from "@stanko/react-window/body";
+import { ReactBody } from "@stanko/react-window";
 
 function Example() {
   return (
