@@ -1,7 +1,7 @@
 # React Window
 
-[![npm version](https://img.shields.io/npm/v/react-window.svg?style=flat-square)](https://www.npmjs.com/package/react-window)
-[![npm downloads](https://img.shields.io/npm/dm/react-window.svg?style=flat-square)](https://www.npmjs.com/package/react-window)
+[![npm version](https://img.shields.io/npm/v/@stanko/react-window.svg?style=flat-square)](https://www.npmjs.com/package/react-window)
+[![npm downloads](https://img.shields.io/npm/dm/@stanko/react-window.svg?style=flat-square)](https://www.npmjs.com/package/react-window)
 
 ReactWindow is a component that simplifies the management of window event listeners.
 
@@ -69,6 +69,7 @@ function Example() {
       >
         {listenForScroll ? "Disable" : "Enable"} scroll listener
       </button>
+
       {listenForScroll && (
         <ReactWindow
           onScroll={() => {
