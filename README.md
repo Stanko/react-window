@@ -1,13 +1,14 @@
-# React Window
+# ReactWindow
 
 [![npm version](https://img.shields.io/npm/v/@stanko/react-window.svg?style=flat-square)](https://www.npmjs.com/package/@stanko/react-window)
 [![npm downloads](https://img.shields.io/npm/dm/@stanko/react-window.svg?style=flat-square)](https://www.npmjs.com/package/@stanko/react-window)
 
-ReactWindow is a component that simplifies the management of window event listeners. 
+React components that simplify the management of window and body event listeners.
 
 Instead of manually adding (and removing) listeners using `useEffect`, ReactWindow allows you to attach them in a more intuitive way:
 
 ```js
+// for window listeners
 <ReactWindow
   onClick={() => {
     console.log("Hello world!");
@@ -20,9 +21,9 @@ Instead of manually adding (and removing) listeners using `useEffect`, ReactWind
 - [Demo](https://muffinman.io/react-window/)
 - [Changelog](CHANGELOG.md)
 
-The component is inspired by [&lt;svelte:window&gt;](https://svelte.dev/docs#template-syntax-svelte-window) and is available with the following features:
+The library is inspired by [svelte](https://svelte.dev/docs#template-syntax-svelte-window) and is available with the following features:
 
-- Simplifies management of window event listeners.
+- Simplify management of window (and body) event listeners.
 - Attaches a single event per listener type (if you have multiple instances of ReactWindow with onClick in your app, only a single click event will be attached).
 - Supports conditional rendering.
 - Supports `capture` and `passive` [listener options](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#options).
@@ -39,7 +40,7 @@ $ npm install --save @stanko/react-window
 
 Import and use it in your React app:
 
-### Base example
+### ReactWindow base example
 
 ```js
 import ReactWindow from "@stanko/react-window";
@@ -52,6 +53,24 @@ function Example() {
       }}
       onScroll={() => {
         console.log(`Wheeeeee! ${window.scrollY}px`);
+      }}
+    />
+  );
+}
+```
+
+### ReactBody base example
+
+`ReactBody` works same as `ReactWindow` but attaches listeners to `document.body` instead of `window`.
+
+```js
+import ReactBody from "@stanko/react-window/body";
+
+function Example() {
+  return (
+    <ReactBody
+      onClick={() => {
+        console.log("Hello!");
       }}
     />
   );

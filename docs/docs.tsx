@@ -1,6 +1,6 @@
 import React, { StrictMode, useState, useEffect } from "react";
 import { createRoot } from "react-dom/client";
-import ReactWindow, { __event_store } from "../src/index";
+import ReactWindow, { __event_store } from "../src/body";
 
 const log = console.log;
 

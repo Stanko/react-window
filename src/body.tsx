@@ -6,14 +6,14 @@ import type { ReactWindowEvents, AttachedEvent } from "./types";
  * */
 export const __event_store: Record<string, AttachedEvent> = {};
 
-const ReactWindow: React.FC<ReactWindowEvents> = (props) => {
-  if (typeof window === "undefined") {
+const ReactBody: React.FC<ReactWindowEvents> = (props) => {
+  if (typeof document === "undefined") {
     return null;
   }
 
-  useGlobalEvents(props, window, __event_store);
+  useGlobalEvents(props, document.body, __event_store);
 
   return null;
 };
 
-export default ReactWindow;
+export default ReactBody;

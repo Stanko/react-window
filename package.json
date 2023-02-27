@@ -1,9 +1,9 @@
 {
   "name": "@stanko/react-window",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "private": false,
   "license": "MIT",
-  "description": "A React component that simplifies the management of window event listeners.",
+  "description": "React components that simplify the management of window and body event listeners.",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
